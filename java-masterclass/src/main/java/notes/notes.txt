@@ -148,3 +148,12 @@
         3.
     - Lambdas as so: new Thread(()-> System.out.println("Hey")).start(); can only be run with interfaces that only have one method.
     These interfaces are also called functional interfaces.
+
+## Functions
+    - A functional Interface, is an interface only implementing one method, thus making it suitable for lambdas
+    - A CONSUMER<T> is a functional interface
+        - consumer does not return anything per se
+    - Many consumer and predicate interface are generic
+    - There are also double consumers, int, double consumers etc.
+    - SUPPLIER
+        - Does return a value
