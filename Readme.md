@@ -189,4 +189,5 @@
     - A Java Stream is a sequence of computation
     - Map Method wants a function, NOT a Bi-function
     - Stream end in Terminal operations, between that and the start of the pipeline are Intermediate operations
+    - Stream interface cannot be used on mixed types
 

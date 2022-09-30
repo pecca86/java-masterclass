@@ -3,6 +3,7 @@ package lambdas_functions.functions;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+import java.util.function.Function;
 import java.util.function.IntPredicate;
 import java.util.function.Predicate;
 import java.util.function.Supplier;
@@ -59,6 +60,27 @@ public class FunctionDemo {
             System.out.println(randSupplier.get());
         }
 
+        // FUNCTION INTERFACE
+        System.out.println("=== F_U_N_C_T_I_O_N ===");
+        // String is the return type
+        Function<Employee, String> getAgeString = (Employee e) -> {
+            return e.getName().substring(e.getName().indexOf('-')+1);
+        };
+
+        Function<Employee, String> getFirstName = (Employee e )-> {
+            return e.getName().substring(0, e.getName().indexOf('-'));
+        };
+
+        String age = getAgeString.apply(employeeList.get(0));
+        System.out.println(age);
+
+        System.out.println(getRandomName(getFirstName, employeeList.get(0)));
+        System.out.println(getRandomName(getAgeString, employeeList.get(0)));
+
+    }
+
+    private static String getRandomName(Function<Employee, String> getName, Employee employee) {
+        return getName.apply(employee);
     }
 
     public static void printEmployeesAgeFilter(Predicate<Employee> isUnderThirty, List<Employee> employees) {
