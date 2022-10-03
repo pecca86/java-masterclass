@@ -185,9 +185,18 @@
         5. UnaryOperator- depends,     1,          Yes,                        Yes
 
         ```
+    - Criteria for Interface to be functional:
+        - It can only have one SINGLE method that MUST be implemented
+        - Other methods must have default implementations
 ## STREAM API
     - A Java Stream is a sequence of computation
     - Map Method wants a function, NOT a Bi-function
     - Stream end in Terminal operations, between that and the start of the pipeline are Intermediate operations
     - Stream interface cannot be used on mixed types
+    - Mapping a single value to mulitple objects can be done using flatmap (flattens nested arrays)
+    - Streams are lazelly evaluated, nothing happens if there is no terminal operation
+
+## LAMBDA BEST PRACTICES
+    - MAKE IT HUMAN READABLE!
+    - KEEP CONSISTENS IN LAMBDA STYLING!
 
