@@ -196,7 +196,16 @@
     - Mapping a single value to mulitple objects can be done using flatmap (flattens nested arrays)
     - Streams are lazelly evaluated, nothing happens if there is no terminal operation
 
-## LAMBDA BEST PRACTICES
+### LAMBDA BEST PRACTICES
     - MAKE IT HUMAN READABLE!
     - KEEP CONSISTENS IN LAMBDA STYLING!
 
+## REGEX
+
+### Matches
+- Matches method requires the WHOLE string to match
+- ^ matches beginning, $ matches end
+
+### replaceAll
+- replaceAll("[ab]", "X") would replace alla 'a' and 'b' with 'X'
+- myString.replaceAll("[23][a-z]", "REPLACED")); >> Replaces all 2 or 3 that are preceded by 'a' or 'z' with the string 'REPLACED'
