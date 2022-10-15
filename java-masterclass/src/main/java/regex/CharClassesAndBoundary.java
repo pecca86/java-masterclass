@@ -40,7 +40,7 @@ public class CharClassesAndBoundary {
 
         // Example 10
         String matchazLowerCase09AZandUnderScore = "___13adAB";
-        System.out.println(matchazLowerCase09AZandUnderScore.replaceAll("\\w", "X"));
+        System.out.println(matchazLowerCase09AZandUnderScore.replaceAll("\\w", "EX10"));
 
         // EXAMPLE 11
         String removesAllThatIsNotWhiteSpace = "JAg e en fattig bonddräng!";

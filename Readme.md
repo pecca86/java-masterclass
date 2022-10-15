@@ -214,3 +214,4 @@
 ### Pattern
 - Commonly used with Matcher
 - Best use case, if the pattern will be checked in many places
+- ? is a lazy quantifier

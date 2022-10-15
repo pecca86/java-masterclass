@@ -9,7 +9,5 @@ public class RegExConditionals {
         System.out.println("DickIniMouth".replaceAll("i[^m|M]", "X"));
         System.out.println("DickIniMouth".replaceAll("i(?!m|M)", "X"));
         System.out.println("DickIniMouth".replaceAll("i(?=m|M)", "X"));
-
-
     }
 }
