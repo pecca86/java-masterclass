@@ -215,3 +215,12 @@
 - Commonly used with Matcher
 - Best use case, if the pattern will be checked in many places
 - ? is a lazy quantifier
+
+# DEBUGGING (IntelliJ specific)
+- Some 3rd party classes will not include the debugging classes
+- Traversing back in time in the debugger, will not changed set database connections, final values, network connections etc.
+- "Run to Cursor" -> Jump over code up to the place where the cursor currently points
+- Field watchpoints are used, when interested in knowing when a Class variable is updated
+
+# TESTING (unit)
+- When comparing doubles, use the 3 param assertEquals() function, where the third parameter is the delta
