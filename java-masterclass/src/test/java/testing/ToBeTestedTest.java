@@ -1,12 +1,22 @@
 package testing;
 
+import org.junit.After;
+import org.junit.AfterClass;
+import org.junit.BeforeClass;
+import org.junit.Test;
+
 import java.util.Optional;
 
 import static org.junit.Assert.*;
 
 public class ToBeTestedTest {
 
-    ToBeTested underTest;
+    private ToBeTested underTest;
+
+    @BeforeClass
+    public static void beforeClass() {
+        System.out.println("Executed once before the tests");
+    }
 
     @org.junit.Before
     public void setUp() throws Exception {
@@ -32,5 +42,21 @@ public class ToBeTestedTest {
     @org.junit.Test
     public void getSaldo() {
         assertEquals(24000, underTest.getSaldo(), 0);
+    }
+
+    @Test(expected = IllegalAccessException.class)
+    public void should_throw_exception() throws IllegalAccessException {
+        underTest.robBankAccount();
+        fail("Should throw exception!");
+    }
+
+    @AfterClass
+    public static void afterClass() {
+        System.out.println("Executed after all testes");
+    }
+
+    @After
+    public void afterEachTest() {
+        System.out.println("A test was finished!");
     }
 }

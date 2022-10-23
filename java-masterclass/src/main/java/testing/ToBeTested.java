@@ -24,4 +24,8 @@ public class ToBeTested {
     public Double getSaldo() {
         return saldo;
     }
+
+    public void robBankAccount() throws IllegalAccessException {
+        throw new IllegalAccessException("NO SIR NOT TODAY!");
+    }
 }

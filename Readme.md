@@ -224,3 +224,33 @@
 
 # TESTING (unit)
 - When comparing doubles, use the 3 param assertEquals() function, where the third parameter is the delta
+- Junit @BeforeClass & @AfterClass can be used to instanciate certain objects that only need to be instanciated once, e.g., network socket etc.
+- Paramitarized tests:
+    - class must be annotaded with @RunWith(Paramitarized.class)
+    - A method annotaded with @Paramitarized.Parameters
+    - Valid option if you want to do the same test with loads of different values
+
+# DATABASES
+## SQLITE WITH JAVA:
+- .backup backup-name
+- .restore backup-name
+- views can be used to create virtual tables:
+    - CREATE VIEW pekka_view AS SELECT * FROM pekka;
+## JDBC
+- A library containing Database drivers
+- Using Table indexes makes iterating over the database records faster
+## Prepared statements
+- JDBC disables the usage of multiple SQL statements in one execution, thus appeding ; DROP TABLE, is prevented
+## Transactions
+- We use transactions when we want to control when the SQL statements are executed
+- The transaction involves multiple executions, if one fails, all fail
+- ACID principles
+    - Automicity = All or none
+    - Consistency = DB is before and after the transaction in a valid state
+    - Isolation = Until the changes are committed and completed, they won't be visible to others
+    - Durability = Once changes are committed, they are permanent
+- Manual transactions:
+    - BEGIN TRANSACTION
+    - END TRANSACTION
+    - COMMIT
+    - ROLLBACK    
