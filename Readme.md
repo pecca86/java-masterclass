@@ -254,3 +254,7 @@
     - END TRANSACTION
     - COMMIT
     - ROLLBACK    
+
+# NETWORKING
+- In core Java we use threads in comibine with I/O streams
+- 
