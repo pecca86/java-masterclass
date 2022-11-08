@@ -257,4 +257,19 @@
 
 # NETWORKING
 - In core Java we use threads in comibine with I/O streams
-- 
+## URI vs. URL
+- URI is like a relative path, you might not be able to identify the resource exactly
+- URL is a absolute path, aka. an identifier of the resource
+- In Java it is easy to convert between URI and URL, it is recommended to use the URI format, until the resource needs to be identified
+- High level abstractions include: URI, URL, URLConnection & HttpURLConnection
+## URI
+1. Scheme
+2. Scheme-specific part
+3. Authority
+4. User-info
+5. Host
+6. Port
+7. Path
+8. Query
+9. Fragment
+- scheme:[//[user[:password]@]host[:port]]/[path][?query][#fragment]  (absolute URI)
