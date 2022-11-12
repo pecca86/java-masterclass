@@ -6,9 +6,6 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
-import java.nio.Buffer;
-import java.util.List;
-import java.util.Map;
 
 public class HttpUrlConnWithParams {
     public static void main(String[] args) {
