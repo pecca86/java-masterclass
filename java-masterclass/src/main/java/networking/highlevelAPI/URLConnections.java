@@ -7,6 +7,8 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.*;
 import java.nio.Buffer;
+import java.util.List;
+import java.util.Map;
 
 public class URLConnections {
     public static void main(String[] args) {
@@ -61,6 +63,18 @@ public class URLConnections {
                 System.out.println(line2);
             }
             is.close();
+
+
+            System.out.println("======== CONNECTION USING HTTPUrlConnection ==========");
+            Map<String, List<String>> headerFields =  urlConnection.getHeaderFields();
+            headerFields.entrySet()
+                    .stream()
+                    .forEach(e -> {
+                        System.out.println("================================");
+                        System.out.println("KEY: " + e.getKey());
+                        e.getValue().stream().forEach(v -> System.out.println("VALUE: " + v));
+                    });
+
 
         } catch (URISyntaxException e) {
             throw new RuntimeException(e);
