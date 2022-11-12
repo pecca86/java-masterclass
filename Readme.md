@@ -273,3 +273,66 @@
 8. Query
 9. Fragment
 - scheme:[//[user[:password]@]host[:port]]/[path][?query][#fragment]  (absolute URI)
+
+# MODULES (From Java 9 up)
+- A Java app can be thought of as a collection of modules
+- Module system is designed to have a reliable configuration, strong encapsulation and a modular JDK/JRE
+- JPMS
+## What is a module?
+- A named collection of data and code
+- Can contain Java code thats is oraginzed as a set of packages, each package can contain classes, interfaces etc.
+- Module = Container of packages
+## Module configuration
+- name = unique module name
+- inputs = What is required for the module to be compiled and run
+- outputs = what the module outputs or exports to other modules
+## Introduction
+- Standard modules have names prefixed with java (java.base, java.sql)
+- Every module comes with a module descriptor file that describes the module and contains metadata about the module = module-info.java
+## Module types
+- Normal => Grants access at compile time and run time to types in only explicitly exported packages
+- Open => same as normal + at run time to types in all its packages, as if they were explicitly exported
+- The kind of type determines on the access of the module
+## GOALS
+- Sacalability = smaller computing devices and moving away from monolithic runtime
+- Security and maintanability = code base more maintanable and internal API hidden
+- Performance = smaller platform with only the necessary runtimes
+- Easier developer experience
+## Module declaration
+- requires = specifies the module that is required by the current module (dependency)
+- exports = packages exported by the current module
+- provides = specifies the service implementations that the modules provide
+- uses = specifies the service that the current module consumes
+- opens = packages that are opened to other modules (only valid if modules is not set to open)
+## Named vs unnamed modules:
+### named
+- named = can be normal or automatic
+- all platform modules are named
+- has a module-info.java file
+- declared using module
+- does not export packages by default
+- divided into basic and open modules
+### Automatic
+- created after adding a JAR file to module path
+- not explicitly declared
+- exports packages by default
+- useful for third-party code
+- Used for migrating existing apps to Java 9
+### Open modules
+- Spring, Hibernate use reflection to access internals of JDK at runtime, this won't work unless we have an open module
+- open keyword makes all packages accessible for deep reflection
+### Unnamed
+- Export all packages
+- Reads all modules in the JDK and on the module path
+- made up of all JAR files from the classpath
+- a named module can't require an unnamed module
+### Aggregator modules
+- exists for convenience
+- usually have no own code, just a descriptor
+- collect and export the contents of other modules, aka. Aggregator so we can depend on a single module instead of e.g., three different modules
+## JDK Module Path
+- Path to sequence of folders that contain modules
+- Path to modular JAR
+- Path to JMOD file
+- Path is used by compiler to find the code
+
