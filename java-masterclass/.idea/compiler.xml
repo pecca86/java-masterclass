@@ -6,7 +6,9 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="java-masterclass" />
+        <module name="pekka.db" />
+        <module name="pekka.common" />
+        <module name="pekka.ui" />
       </profile>
     </annotationProcessing>
   </component>

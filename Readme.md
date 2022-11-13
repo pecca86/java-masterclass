@@ -335,4 +335,7 @@
 - Path to modular JAR
 - Path to JMOD file
 - Path is used by compiler to find the code
+## Transitive Dependencies
+- Module A requires Module B, B requires Module C
+- With the keyword transitive in the module-info.java file
 
